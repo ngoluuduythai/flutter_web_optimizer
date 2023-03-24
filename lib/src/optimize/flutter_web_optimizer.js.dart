@@ -19,9 +19,9 @@ const String flutterWebOptimizerSourceCode = r'''
             return value;
           },
           set: function (v) {
-            value = v;
-            if (v.startsWith('./')) {
-              v = v.replace('./', '');
+            value = v.toString();
+            if (v.toString().startsWith('./')) {
+              v = v.toString().replace('./', '');
             }
             if (hashFileManifest[v]) {
               value = assetBase + hashFileManifest[v];
